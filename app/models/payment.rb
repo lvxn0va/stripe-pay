@@ -1,4 +1,8 @@
 class Payment < ActiveRecord::Base
+  
+  validates_presence_of :email
+  validates_format_of :email, :with => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/i
+  
   attr_accessor :stripe_card_token
   
   def save_with_payment
@@ -8,7 +12,7 @@ class Payment < ActiveRecord::Base
           :amount => (self.amount * 100).to_i,
           :currency => 'usd',
           :card => self.stripe_card_token,
-          :description => 'Payment from someone'
+          :description => self.email
         )
         save!
       end
