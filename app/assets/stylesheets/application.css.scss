@@ -146,8 +146,8 @@ html.no-js #stripe_error {
 	}
 }
 
-/*.field input {
-	font-size: 18px;
-	color: #333;
-	padding: 6px;
-}*/
+@-moz-document url-prefix() {
+	#card_number {
+		width: 189px;
+	}
+}
