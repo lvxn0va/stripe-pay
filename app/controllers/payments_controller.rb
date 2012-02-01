@@ -41,7 +41,6 @@ class PaymentsController < ApplicationController
   # POST /payments.json
   def create
     @payment = Payment.new(params[:payment])
-    @payment.email = "Anonymous" if @payment.email.empty?
     respond_to do |format|
       if @payment.save#_with_payment
         format.html { redirect_to @payment, notice: 'Payment was successfully created.' }

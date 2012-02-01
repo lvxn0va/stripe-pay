@@ -1,4 +1,6 @@
 class Payment < ActiveRecord::Base
+  
+  validates_presence_of :name
     
   attr_accessor :stripe_card_token
   
@@ -9,7 +11,7 @@ class Payment < ActiveRecord::Base
           :amount => (self.amount * 100).to_i,
           :currency => 'usd',
           :card => self.stripe_card_token,
-          :description => self.email
+          :description => self.name
         )
         save!
       end

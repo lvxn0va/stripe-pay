@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20120201210808) do
 
   create_table "payments", :force => true do |t|
     t.decimal  "amount",     :precision => 8, :scale => 2
-    t.string   "email"
+    t.string   "name"
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
   end
