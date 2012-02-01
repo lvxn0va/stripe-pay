@@ -43,7 +43,7 @@ class PaymentsController < ApplicationController
     @payment = Payment.new(params[:payment])
 
     respond_to do |format|
-      if @payment.save
+      if @payment.save_with_payment
         format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
         format.json { render json: @payment, status: :created, location: @payment }
       else
