@@ -10,6 +10,7 @@ payment =
 	setupForm: ->
 		$('#new_payment').submit ->
 			$('input[type=submit]').attr('disabled', true)
+			$('#stripe_error').hide()
 			if $('#card_number').length
 				payment.processCard()
 				false
@@ -27,5 +28,5 @@ payment =
 			$('#payment_stripe_card_token').val(response.id)
 			$('#new_payment')[0].submit()
 		else
-			$('#stripe_error').text(response.error.message)
+			$('#stripe_error').show().text(response.error.message)
 			$('input[type=submit]').attr('disabled', false)
