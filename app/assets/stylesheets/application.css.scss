@@ -1,0 +1,48 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+*/
+
+html body {
+	background: image-url("texture.png");
+}
+
+#payment_form_container {
+	background: #eeeeee;
+	width: 540px;
+	height: 310px;
+	margin: 120px auto;
+	border: 1px solid #333;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+/*	-moz-box-shadow: 3px 3px 5px 6px #222;
+	-webkit-box-shadow: 3px 3px 5px 6px #222;*/
+	box-shadow: 0px 0px 5px 4px #222;
+	
+	h1 {
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 34px;
+		background: #333;
+		color: #eee;
+		margin-top: 12px;
+		padding: 0 16px;
+	}
+	
+	#new_payment {
+		padding: 10px 16px;
+	}
+}
+
+.field input {
+	font-size: 16px;
+}
