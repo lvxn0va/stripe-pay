@@ -13,21 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120201210808) do
 
-  create_table "clients", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "invoices", :force => true do |t|
-    t.integer  "client_id"
-    t.decimal  "amount"
-    t.boolean  "paid"
-    t.text     "notes"
-    t.datetime "paid_on"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "payments", :force => true do |t|
     t.decimal  "amount",     :precision => 8, :scale => 2
     t.string   "email"
