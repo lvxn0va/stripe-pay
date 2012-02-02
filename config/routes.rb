@@ -1,5 +1,7 @@
 Payments::Application.routes.draw do
   resources :payments
+  
+  match 'thankyou' => 'payments#thankyou', :as => :thankyou
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

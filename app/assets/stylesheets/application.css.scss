@@ -19,7 +19,7 @@ html.no-js #stripe_error {
 	display: block;
 }
 
-#payment_form_container {
+#container {
 	background: #eeeeee;
 	width: 486px;
 	margin: 120px auto;
@@ -42,8 +42,11 @@ html.no-js #stripe_error {
 		text-shadow: 0px 1px 1px #222;
 	}
 	
-	#new_payment {
+	.content-pad {
 		padding: 10px 16px;
+	}
+	
+	#new_payment {
 		
 		fieldset {
 			border-bottom: 1px solid #bbb;
