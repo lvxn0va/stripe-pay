@@ -1,29 +1,18 @@
 <h1>Make a Payment</h1>
 
 <%= form_for(@payment, html: { class: 'content-pad' }) do |f| %>
-  <% if @payment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
-
-      <ul>
-      <% @payment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
   <%= f.hidden_field :stripe_card_token %>
 	<fieldset>
 	  <div class="field">
-				
-	    <label for="payment_Amount">Amount<span class="currency_symbol">$</span></label>
+	    <label for="payment_amount">Amount<span class="currency_symbol">$</span></label>
 	    <%= f.text_field :amount %>
 	  </div>
 	  <div class="field">
 	    <%= f.label :name %>
 	    <%= f.email_field :name %>
 	  </div>
-		<% if @payment.stripe_card_token %>
+		<% # raise @payment.stripe_card_token.inspect unless @payment.stripe_card_token.nil? && @payment.stripe_card_token.empty? %>
+		<% unless @payment.stripe_card_token.nil? || @payment.stripe_card_token.empty? %>
 			Credit Card has been provided.
 		<% else %>
 		  <div class="field">
@@ -40,9 +29,8 @@
 		<% end %>
 	</fieldset>
   <div class="actions">
-		<div id="stripe_error">
-		  <noscript>JavaScript is required for this form, please enable it.</noscript>
-		</div>
+			<%= content_tag(:div, @payment.errors.full_messages.first, class: "error") if @payment.errors.any? %>
+		<noscript class="error">JavaScript is required for this form, please enable it.</noscript>
 		<div class="button-wrap">
 			<%= f.submit "Pay Now" %>
 		</div.>

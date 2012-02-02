@@ -1,6 +1,8 @@
 class Payment < ActiveRecord::Base
   
-  validates_presence_of :name
+  validates_presence_of :name, :amount
+  validates_numericality_of :amount, :greater_than => 0
+  # validates :amount, :format => { :with => /^\d+??(?:\.\d{0,2})?$/ }, :numericality => {:greater_than => 0}
     
   attr_accessor :stripe_card_token
   

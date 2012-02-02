@@ -15,10 +15,6 @@ html body {
 	background: image-url('texture.png');
 }
 
-html.no-js #stripe_error {
-	display: block;
-}
-
 #container {
 	background: #eeeeee image-url('card_texture.png');
 	width: 486px;
@@ -30,6 +26,7 @@ html.no-js #stripe_error {
 	-moz-box-shadow: 0px 0px 5px 4px #222;
 	-webkit-box-shadow: 0px 0px 5px 4px #222;
 	box-shadow: 0px 0px 5px 4px #222;
+	min-height: 264px;
 	
 	h1 {
 		font-weight: bold;
@@ -40,6 +37,8 @@ html.no-js #stripe_error {
 		margin-top: 12px;
 		padding: 0 16px;
 		text-shadow: 0px 1px 1px #222;
+		border-top: 1px solid #222;
+		border-bottom: 1px solid #fff;
 	}
 	
 	.content-pad {
@@ -110,7 +109,7 @@ html.no-js #stripe_error {
 			padding-bottom: 6px;
 			text-align: right;
 			
-			#stripe_error {
+			.error {
 				float: left;
 				width: 308px;
 				text-align: left;
@@ -122,7 +121,6 @@ html.no-js #stripe_error {
 				-moz-border-radius: 3px;
 				border-radius: 3px;
 				font-size: 12px;
-				display: none;
 			}
 			
 			.button-wrap {

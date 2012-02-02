@@ -10,7 +10,7 @@ payment =
 	setupForm: ->
 		$('#new_payment').submit ->
 			$('input[type=submit]').attr('disabled', true)
-			$('#stripe_error').hide()
+			$('div.error').remove()
 			if $('#card_number').length
 				payment.processCard()
 				false
@@ -27,6 +27,12 @@ payment =
 		if status == 200
 			$('#payment_stripe_card_token').val(response.id)
 			$('#new_payment')[0].submit()
+		else if status == 402
+			error = $(document.createElement( 'div' ))
+			error.addClass('error')
+			error.text('Connection error')
+			$('.actions').prepend(error)
+			$('input[type=submit]').attr('disabled', false)
 		else
 			$('#stripe_error').show().text(response.error.message)
 			$('input[type=submit]').attr('disabled', false)
