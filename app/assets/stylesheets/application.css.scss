@@ -11,9 +11,20 @@
  *= require_self
 */
 
+@font-face {
+    font-family: 'WindsongRegular';
+    src: font-url('windsong/Windsong-webfont.eot');
+    src: font-url('windsong/Windsong-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('windsong/Windsong-webfont.woff') format('woff'),
+         font-url('windsong/Windsong-webfont.ttf') format('truetype'),
+         font-url('windsong/Windsong-webfont.svg#WindsongRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html { height: 100%; }
 html body {
-	background: image-url('texture.png');
+	background: #333 image-url('texture.png');
 	height: 100%;
 }
 
@@ -151,6 +162,15 @@ html body {
 	   			padding-left: 34px;
 	   		}
 		}
+	}
+	
+	#thankyou {
+		padding-top: 32px;
+		text-align: center;
+		font-family: "WindsongRegular";
+		font-style: italic;
+		font-size: 72px;
+		line-height: 64px;
 	}
 }
 
