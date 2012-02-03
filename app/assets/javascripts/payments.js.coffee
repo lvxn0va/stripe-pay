@@ -22,17 +22,16 @@ payment =
 			cvc: $('#card_code').val()
 			expMonth: $('#card_month').val()
 			expYear: $('#card_year').val()
+		console.log(card.number)
 		Stripe.createToken(card, payment.handleStripeResponse)
 	handleStripeResponse: (status, response) ->
 		if status == 200
 			$('#payment_stripe_card_token').val(response.id)
 			$('#new_payment')[0].submit()
-		else if status == 402
+		else
 			error = $(document.createElement( 'div' ))
 			error.addClass('error')
-			error.text('Connection error')
+			error.text(response.error.message)
 			$('.actions').prepend(error)
 			$('input[type=submit]').attr('disabled', false)
-		else
-			$('#stripe_error').show().text(response.error.message)
-			$('input[type=submit]').attr('disabled', false)
+			
