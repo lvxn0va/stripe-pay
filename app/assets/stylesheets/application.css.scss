@@ -48,6 +48,49 @@ html.admin, html.admin body { height: auto; }
 		position: static;
 		height: auto;
 		margin: 40px auto;
+		
+		table {
+			width: 466px;
+			margin: 10px;
+			border-collapse: separate;
+			
+			th, td {
+				border-bottom: 1px solid #bbb;
+				padding: 4px;
+			}
+		
+			th {
+				font-weight: bold;
+				text-align: left;		
+				text-transform: uppercase;
+				text-shadow: 0px 1px 1px #fff;
+			}
+		
+			td {
+				border-top: 1px solid #fff;
+				color: #666;
+				
+				&.amount {
+					color: #052;
+					font-size: 24px;
+					font-weight: bold;
+					
+					span {
+						font-weight: normal;
+						font-size: 14px;
+						color: #999;
+					}
+				}
+				
+				&.date {
+					color: #999;
+				}
+			}
+			
+			tr:last-child td {
+				border-bottom: none;
+			}
+		}
 	}
 	
 	h1 {
