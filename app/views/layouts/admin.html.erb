@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <title>Payments</title>
+  <%= stylesheet_link_tag    "reset", "application", :media => "all" %>
+  <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
+  <%= csrf_meta_tags %>
+  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+</head>
+<body>
+<div id="floater"></div>
+<div id="container" class="admin">
+	<%= yield %>
+</div>
+</body>
+</html>

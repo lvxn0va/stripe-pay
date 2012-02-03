@@ -6,10 +6,7 @@ class PaymentsController < ApplicationController
   # GET /payments
   def index
     @payments = Payment.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-    end
+    render :index, layout: 'admin'
   end
 
   # GET /payments/new
