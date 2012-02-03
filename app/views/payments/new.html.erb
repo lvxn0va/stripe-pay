@@ -9,9 +9,8 @@
 	  </div>
 	  <div class="field">
 	    <%= f.label :name %>
-	    <%= f.email_field :name %>
+	    <%= f.text_field :name %>
 	  </div>
-		<% # raise @payment.stripe_card_token.inspect unless @payment.stripe_card_token.nil? && @payment.stripe_card_token.empty? %>
 		<% unless @payment.stripe_card_token.nil? || @payment.stripe_card_token.empty? %>
 			Credit Card has been provided.
 		<% else %>
