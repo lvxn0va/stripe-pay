@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js admin">
 <head>
   <title>Payments</title>
   <%= stylesheet_link_tag    "reset", "application", :media => "all" %>
@@ -8,7 +8,6 @@
   <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 </head>
 <body>
-<div id="floater"></div>
 <div id="container" class="admin">
 	<%= yield %>
 </div>

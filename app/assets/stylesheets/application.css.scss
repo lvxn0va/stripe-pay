@@ -23,10 +23,8 @@
 }
 
 html { height: 100%; }
-html body {
-	background: #333 image-url('texture.png');
-	height: 100%;
-}
+html body { background: #333 image-url('texture.png'); height: 100%; }
+html.admin, html.admin body { height: auto; }
 
 #floater { height:50%; margin-bottom:-162px; position:relative; }
 
@@ -45,6 +43,12 @@ html body {
 	-webkit-box-shadow: 0px 0px 5px 4px #222;
 	box-shadow: 0px 0px 5px 4px #222;
 	
+	&.admin {
+		clear: none;
+		position: static;
+		height: auto;
+		margin: 40px auto;
+	}
 	
 	h1 {
 		font-weight: bold;
