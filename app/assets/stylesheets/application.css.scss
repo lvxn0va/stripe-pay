@@ -141,11 +141,20 @@ html body {
 				font-size: 12px;
 			}
 			
-			.button-wrap {
-				background: image-url('button.png') 0 0 no-repeat;
-				width: 113px;
+			.button-outer-wrap {
+				background-image: image-url(image_path('button_right.png'));
+				background-repeat: no-repeat;
+				background-position: right top;
 				height: 35px;
 				border: 0;
+				display: inline-block;
+				padding-right: 3px;
+			}
+			
+			.button-inner-wrap {
+				background-image: image-url(image_path('button_left.png'));
+				background-repeat: no-repeat;
+				background-position: left top;
 				display: inline-block;
 			}
 			
@@ -155,7 +164,6 @@ html body {
 	   			color: #fff;
 	   			font-size: 13px;
 	   			text-shadow: -1px -1px 2px #069;
-	   			width: 113px;
 	   			height: 34px;
 	   			cursor: pointer;
 	   			text-align: left;

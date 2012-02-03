@@ -31,8 +31,8 @@
   <div class="actions">
 			<%= content_tag(:div, @payment.errors.full_messages.first, class: "error") if @payment.errors.any? %>
 		<noscript class="error">JavaScript is required for this form, please enable it.</noscript>
-		<div class="button-wrap">
-			<%= f.submit "Pay Now" %>
+		<div class="button-outer-wrap">
+			<div class="button-inner-wrap"><%= f.submit "Pay Now" %></div>
 		</div.>
   </div>
 <% end %>
