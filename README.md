@@ -6,6 +6,8 @@ Payments is a personal project.
 
 Payments is a work in progress.
 
+![Payments screenshot](https://github.com/jordanstephens/payments/raw/master/doc/screenshot.png)
+
 ## Setup
 
 There are a few values that you will have to set directly in the code to get up and running.
