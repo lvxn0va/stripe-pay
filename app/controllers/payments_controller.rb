@@ -5,26 +5,6 @@ class PaymentsController < ApplicationController
   def thankyou
   end
   
-  def charge
-    @payments = Payment.all
-    render :index, layout: 'admin'
-    respond_to do |format|
-      if @payment.charge_payment
-        format.html { redirect_to thankyou_path }
-      else
-        format.html { render action: "edit" }
-      end
-    end
-  end
-  
-  def edit
-    @payment = Payment.edit
-
-    respond_to do |format|
-      format.html # edit.html.erb
-    end
-  end
-  
   # GET /payments
   def index
     @payments = Payment.all

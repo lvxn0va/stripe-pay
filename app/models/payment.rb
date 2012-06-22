@@ -28,7 +28,7 @@ class Payment < ActiveRecord::Base
     begin
       customer_id = get_stripe_id
       Stripe::Charge.create(
-        #:amount => (self.amount * 100).to_i,
+        :amount => (self.amount * 100).to_i,
         :currency => 'usd',
         :card => self.stripe_card_token,
         :customer => customer_id,
