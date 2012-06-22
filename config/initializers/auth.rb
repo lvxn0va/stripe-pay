@@ -1,2 +1,2 @@
-BASIC_AUTH_USER = "admin"
-BASIC_AUTH_PASSWORD = "secret"
+BASIC_AUTH_USER = "payadmin"
+BASIC_AUTH_PASSWORD = "password!"

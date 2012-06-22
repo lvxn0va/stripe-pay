@@ -18,12 +18,19 @@ payment =
 				true
 	processCard: ->
 		card =
+			name: $('#name').val()
 			number: $('#card_number').val()
 			cvc: $('#card_code').val()
 			expMonth: $('#card_month').val()
 			expYear: $('#card_year').val()
+			address_line1: $('#address_line1').val()
+			address_line2: $('#address_line2').val()
+			address_state: $('#address_state').val()
+			address_zip: $('#address_zip').val()
 		console.log(card.number)
 		Stripe.createToken(card, payment.handleStripeResponse)
+		false
+		
 	handleStripeResponse: (status, response) ->
 		if status == 200
 			$('#payment_stripe_card_token').val(response.id)
@@ -34,4 +41,4 @@ payment =
 			error.text(response.error.message)
 			$('.actions').prepend(error)
 			$('input[type=submit]').attr('disabled', false)
-			
+		

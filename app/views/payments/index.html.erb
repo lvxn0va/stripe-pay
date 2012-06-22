@@ -4,7 +4,8 @@
   <tr>
     <th>Name</th>
     <th>Amount</th>
-		<th>Date</th>
+	<th>Date</th>
+	<th>Cust ID<th>
   </tr>
 
 	<% @payments.each do |payment| %>
@@ -12,6 +13,7 @@
 			<td><%= payment.name %></td>
 	    <td class="amount"><span class="currency">$</span><%= number_with_precision(payment.amount, :precision => 2, :delimiter => ',') %></td>
 			<td class="date"><%= payment.created_at.strftime("%b %d, %Y at %I:%M") %></td>
+			<td><%= payment.stripe_id %></td>
 	  </tr>
 	<% end %>
 </table>

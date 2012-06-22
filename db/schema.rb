@@ -11,13 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120201210808) do
+ActiveRecord::Schema.define(:version => 20120621010730) do
 
   create_table "payments", :force => true do |t|
-    t.decimal  "amount",     :precision => 8, :scale => 2
+    t.decimal  "amount",            :precision => 8, :scale => 2
     t.string   "name"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
+    t.string   "stripe_id"
+    t.string   "email"
+    t.string   "address_line1"
+    t.string   "address_line2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "stripe_card_token"
+    t.string   "description"
   end
 
 end

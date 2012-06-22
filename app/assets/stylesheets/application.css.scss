@@ -26,14 +26,14 @@ html { height: 100%; }
 html body { background: #333 image-url('texture.png'); height: 100%; }
 html.admin, html.admin body { height: auto; }
 
-#floater { height:50%; margin-bottom:-162px; position:relative; }
+#floater { height:50%; margin-bottom: -250px; position:relative; }
 
 #container {
 	clear: both;
-	height: 324px;
+	height: 500px;
 	position: relative;
 	background: #eeeeee image-url('card_texture.png');
-	width: 486px;
+	width: 575px;
 	margin: 0 auto;
 	border: 1px solid #333;
 	-webkit-border-radius: 8px;
@@ -50,7 +50,7 @@ html.admin, html.admin body { height: auto; }
 		margin: 40px auto;
 		
 		table {
-			width: 466px;
+			width: 566px;
 			margin: 10px;
 			border-collapse: separate;
 			

@@ -8,9 +8,28 @@
 	    <%= f.text_field :amount %>
 	  </div>
 	  <div class="field">
-	    <%= f.label :name %>
+	    <%= label_tag :name, "Name" %>
 	    <%= f.text_field :name %>
 	  </div>
+	  <div class="field">
+	    <%= label_tag :email, "Email" %>
+	    <%= f.text_field :email %>
+	  </div>
+	  <div class= "field">
+	    <%= label_tag :address_line1, "Address 1" %>
+	    <%= f.text_field :address_line1 %>
+	  <div class= "field">
+		<%= label_tag :address_line2, "Address 2" %>
+	    <%= f.text_field :address_line2 %>
+	  </div>
+	  <div class="field">
+	    <%= label_tag :city, "City" %>
+	    <%= f.text_field :city, :size => 15, :maxlength => 25 %>
+	    <%= label_tag :state, "State", class: "inline" %>
+	    <%= f.text_field :state, :size => 2, :maxlength => 2 %>
+	    <%= label_tag :zip, "Zip", class: "inline" %>
+	    <%= f.text_field :zip, :size => 5, :maxlength => 5 %>
+	  </div>		
 		<% unless @payment.stripe_card_token.nil? || @payment.stripe_card_token.empty? %>
 			Credit Card has been provided.
 		<% else %>
