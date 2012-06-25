@@ -1,4 +1,6 @@
 Payments::Application.routes.draw do
+  devise_for :users
+
   resources :payments
   
   match 'thankyou' => 'payments#thankyou', :as => :thankyou
@@ -52,7 +54,9 @@ Payments::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'payments#new'
+  root :to => 'high_voltage/pages#show', :id => 'main'
+  #root :to => 'payments#new'
+  #root :to => 'main.html'
 
   # See how all your routes lay out with "rake routes"
 

@@ -57,5 +57,7 @@ module Payments
     config.assets.version = '1.0'
     
     config.action_view.field_error_proc = proc {|html, instance| html }
+    
+    RPXNow.api_key = "94caba51692393cae23c97b6ebc2b9f1bd116539" # real key goes here.
   end
 end

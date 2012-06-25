@@ -9,9 +9,13 @@
   <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 </head>
 <body>
+	
 <div id="floater"></div>
 <div id="container">
 	<%= yield %>
 </div>
+<%= javascript_include_rpx(user_session_url) %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 </body>
 </html>

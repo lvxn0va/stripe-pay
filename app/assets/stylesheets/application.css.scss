@@ -143,6 +143,16 @@ html.admin, html.admin body { height: auto; }
 			text-shadow: 0px 1px 1px #fff;
 		}
 		
+		link_label {
+			text-transform: uppercase;
+			font-weight: bold;
+			position: relative;
+			top: -1px;
+			width: 136px;
+			display: inline-block;
+			text-shadow: 0px 1px 1px #fff;
+		}
+		
 		label.inline {
 			width: auto;
 		}
